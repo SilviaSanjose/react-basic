@@ -19,11 +19,18 @@ function App() {
       </header>
 
       <div>
-        <label htmlFor="name">Nombre</label>
-        <h3>{name==="Silvia" ? `Hola ${name}` : "¿No se tu nombre?"}</h3>
+        <label htmlFor="name">{name}</label>
+        <h3>{name==="Silvia" ? `Hola ${name}` : "Estoy entrando en el else"}</h3>
         <ul>
           {estaciones.map((el, index) => <li key={index}>{el}</li>)}
         </ul>
+        <pre>{`
+        let estaciones = ["Primavera", "Verano", "Otoño", "Invierno"]
+        <ul>
+          {estaciones.map((el, index) => <li key={index}>{el}</li>)}
+        </ul>
+
+        `}</pre>
       </div>
       <section>
         <ComponentF msg="Mensaje creado desde la app principal como propiedad."></ComponentF>

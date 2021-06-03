@@ -45,3 +45,8 @@ main{
 .App-link {
   color: #61dafb;
 }
+
+pre {
+  text-align: left;
+  border: solid 1px black;
+}
