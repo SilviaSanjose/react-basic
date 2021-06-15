@@ -1,6 +1,7 @@
 import React from 'react'
 
-export default function Propiedades(props) {
+
+const Propiedades = (props) => {
     return (
         <div>
             <h2>Propiedades</h2>
@@ -63,3 +64,5 @@ export default function Propiedades(props) {
 Propiedades.defaultProps = {
     porDefecto: "Propiedad por defecto"
 }
+
+export default Propiedades;

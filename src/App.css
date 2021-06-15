@@ -3,6 +3,11 @@
   display: flex;
   flex-direction: column;
 }
+header a{
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+}
 main{
   flex: 1;
   margin: 20px 9%;
