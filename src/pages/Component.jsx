@@ -13,17 +13,19 @@
     }
 } */
 
-
 function ComponentF() {
-    return (
-        <div>
-            <h2>Componente funcional</h2>
-            <p>Debe tener export para llamarlo desde la App principal: puede ser desde la propia función, o al final de la misma, según donde vaya se llama en la App principal
-                de una manera u otra 
-            Debe devolver un return con el código JSX.
-            Desde la app principal se llama a este componente, que se ha de importar(según el método)</p>
-            
-            <pre>{`
+  return (
+    <main>
+      <h2>Componente funcional</h2>
+      <p>
+        Debe tener export para llamarlo desde la App principal: puede ser desde
+        la propia función, o al final de la misma, según donde vaya se llama en
+        la App principal de una manera u otra Debe devolver un return con el
+        código JSX. Desde la app principal se llama a este componente, que se ha
+        de importar(según el método)
+      </p>
+
+      <pre>{`
          Component.jsx
             
             function ComponentF() {
@@ -41,8 +43,8 @@ function ComponentF() {
                 )
             }
             `}</pre>
-            
-            <pre>{`
+
+      <pre>{`
         App.jsx
             import ComponentF from "./components/Component";
             import { ComponentF } from "./components/Component";
@@ -51,13 +53,14 @@ function ComponentF() {
 
             `}</pre>
 
-            <p>Es recomendable en los componentes que van a ir cambiando, por ejemplo al ir cargando más datos, que lleven estado: esto es que cada vez que lo que guardemos en
-                el estado cambie, se vuelve a renderizar el componente. 
-                Se usa añadiendo <b>import React, |useState | from "react"</b> al import de React. Y en el componente, 
-            </p>
-            
-        </div>
-    )
+      <p>
+        Es recomendable en los componentes que van a ir cambiando, por ejemplo
+        al ir cargando más datos, que lleven estado: esto es que cada vez que lo
+        que guardemos en el estado cambie, se vuelve a renderizar el componente.
+        Se usa añadiendo <b>import React, |useState | from "react"</b> al import
+        de React. Y en el componente,
+      </p>
+    </main>
+  );
 }
 export default ComponentF;
-
