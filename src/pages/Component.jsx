@@ -25,7 +25,7 @@ function ComponentF() {
         de importar(según el método)
       </p>
 
-      <pre>{`
+      <pre className="component-pre">{`
          Component.jsx
             
             function ComponentF() {
