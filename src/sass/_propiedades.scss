@@ -1,3 +1,6 @@
 h2 {
   color: red;
+  &:hover {
+    color: pink;
+  }
 }
