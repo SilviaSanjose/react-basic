@@ -13,6 +13,7 @@ import Propiedades from "./pages/Propiedades";
 import Error404 from "./pages/Error404";
 import Home from "./pages/Home";
 import Rutas from "./pages/Rutas";
+import ApiAxios from "./pages/ApiAxios";
 
 function App() {
   const idRoute = Math.round(Math.random() * 10);
@@ -40,6 +41,9 @@ function App() {
                 Rutas Dinámicas
               </Link> */}{" "}
               {/*ruta con useLocation() */}
+              <Link exact to="/api">
+                Api
+              </Link>
             </nav>
           </header>
 
@@ -57,6 +61,8 @@ function App() {
             {/*ruta con useParams() */}
             <Route path="/rutas" component={Rutas} />
             {/*ruta con useLocation() */}
+
+            <Route exact path="/api" component={ApiAxios} />
 
             <Route path="*" component={Error404} />
           </Switch>
