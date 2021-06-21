@@ -14,6 +14,9 @@
 } */
 
 function ComponentF() {
+  let myStyle = {
+    color: "blue",
+  };
   return (
     <main>
       <h2>Componente funcional</h2>
@@ -60,6 +63,7 @@ function ComponentF() {
         Se usa añadiendo <b>import React, |useState | from "react"</b> al import
         de React. Y en el componente,
       </p>
+      <h2 style={myStyle}>Mi Estilo definido en el componente</h2>
     </main>
   );
 }

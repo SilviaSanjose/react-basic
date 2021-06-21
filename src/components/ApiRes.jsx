@@ -3,7 +3,7 @@ import { useState, useEffect, Fragment } from "react";
 
 const ApiRes = (props) => {
   //console.log("Mis datos", props);
-  //console.log("Mis datos2", props.data);
+  console.log("Mis datos2", props.data);
 
   const [data, setUsers] = useState(["Loading"]);
 
@@ -12,8 +12,8 @@ const ApiRes = (props) => {
     console.log("Mis datos3", data);
   });
 
-  if (data.length > 0) {
-    console.log("Datod", data);
+  if (data.length > 0 || typeof data === "object") {
+    console.log("Datos", data);
     if (data[0] === "Loading") {
       console.log("Data 0");
       return <h1>Loading</h1>;
@@ -22,11 +22,10 @@ const ApiRes = (props) => {
       if (props.apicall === "getAll") {
         return (
           <div>
-            ENtra en div
             <ul>
               {data.map((i, index) => (
                 <Fragment key={index}>
-                  <li>{i.userId}</li>
+                  <li>{i.id}</li>
                   <li>{i.title}</li>
                   <li>{i.body}</li>
                 </Fragment>

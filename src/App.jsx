@@ -1,6 +1,8 @@
 import React from "react"; // no es necesario desde la versión 17
 import logo from "./logo.svg";
-import "./App.css";
+//import "./App.css";
+import "./static/main.css";
+
 import {
   BrowserRouter as Router,
   Link,
