@@ -12,6 +12,7 @@
         )
     }
 } */
+import styles from "./Component.module.scss";
 
 function ComponentF() {
   let myStyle = {
@@ -19,7 +20,7 @@ function ComponentF() {
   };
   return (
     <main>
-      <h2>Componente funcional</h2>
+      <h2 className={styles.title}>Componente funcional</h2>
       <p>
         Debe tener export para llamarlo desde la App principal: puede ser desde
         la propia función, o al final de la misma, según donde vaya se llama en
@@ -28,7 +29,7 @@ function ComponentF() {
         de importar(según el método)
       </p>
 
-      <pre className="component-pre">{`
+      <pre>{`
          Component.jsx
             
             function ComponentF() {
