@@ -8,7 +8,7 @@ const ApiRes = (props) => {
   const [data, setUsers] = useState(["Loading"]);
 
   useEffect(() => {
-    setUsers(props.data);
+    setUsers(props.data, data);
     console.log("Mis datos3", data);
   });
 
