@@ -70,6 +70,7 @@ function App() {
           </Switch>
         </Router>
 
+
         <footer className="footer">
           <a
             className="App-link"

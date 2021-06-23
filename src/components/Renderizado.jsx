@@ -3,7 +3,7 @@ import React from 'react'
 export default function Renderizado() {
     return (
         <div>
-            sss
+            Mi componente renderizado con cambios de estado
 
         </div>
     )
