@@ -2,52 +2,54 @@
 import { useState, useEffect, Fragment } from "react";
 
 const ApiRes = (props) => {
-  //console.log("Mis datos", props);
-  console.log("Mis datos2", props.data);
+  console.log("inicio");
+  console.log("Mis datos", props);
 
-  const [data, setUsers] = useState(["Loading"]);
-
+  const [data, setUsers] = useState("");
   useEffect(() => {
-    setUsers(props.data, data);
-    console.log("Mis datos3", data);
-  });
+    setUsers(props.data);
+    console.log("Mis datos3", props.data);
+  }, [props.data]);
 
+  if (data === "") {
+    console.log("Entrandoooo");
+    return null;
+  }
+  console.log("fin Entrandoooo");
   if (data.length > 0 || typeof data === "object") {
     console.log("Datos", data);
-    if (data[0] === "Loading") {
-      console.log("Data 0");
-      return <h1>Loading</h1>;
-    } else {
-      console.log("IF");
-      if (props.apicall === "getAll") {
-        return (
-          <div>
-            <ul>
-              {data.map((i, index) => (
-                <Fragment key={index}>
-                  <li>{i.id}</li>
-                  <li>{i.title}</li>
-                  <li>{i.body}</li>
-                </Fragment>
-              ))}
-            </ul>
-          </div>
-        );
-      } else if (props.apicall === "getOne") {
-        return (
-          <div>
-            <ul>
-              Mis datos:
-              <li>Usuario: {props.data.userId}</li>
-              <li>Título: {props.data.title}</li>
-              <li>{props.data.body}</li>
-            </ul>
-          </div>
-        );
-      }
+
+    if (props.apicall === "getAll") {
+      console.log("fin");
+      return (
+        <div>
+          <ul>
+            {data.map((i, index) => (
+              <Fragment key={index}>
+                <li>{i.id}</li>
+                <li>{i.title}</li>
+                <li>{i.body}</li>
+              </Fragment>
+            ))}
+          </ul>
+        </div>
+      );
+    } else if (props.apicall === "getOne") {
+      return (
+        <div>
+          <ul>
+            Mis datos:
+            <li>Usuario: {props.data.userId}</li>
+            <li>Título: {props.data.title}</li>
+            <li>{props.data.body}</li>
+          </ul>
+        </div>
+      );
     }
   } else {
-    console.log("Else");
+    console.log("Else: Sin datos");
+    console.log(data);
+    console.log("fin");
     return <h1>No hay datos</h1>;
   }
 };

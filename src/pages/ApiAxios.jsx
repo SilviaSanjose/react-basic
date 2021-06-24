@@ -9,8 +9,8 @@ const ApiAxios = () => {
   const [user, getUser] = useState(""); //agregamos los datos recuperado al estado
   const urlBase = "https://jsonplaceholder.typicode.com/";
 
-  const apicall = "getOne";
-  //const apicall = "getAll";
+  //const apicall = "getOne";
+  const apicall = "getAll";
 
   useEffect(() => {
     //indico que haga la llamada cuando renderice el componente
