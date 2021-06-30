@@ -9,8 +9,8 @@ const ApiAxios = () => {
 
   const urlBase = "https://jsonplaceholder.typicode.com/";
 
-  const url = `${urlBase}posts/1`;
-  //const url = `${urlBase}posts`;
+  //const url = `${urlBase}posts/1`;
+  const url = `${urlBase}posts`;
 
   const { data, isPending, error } = useFetch(url);
 
@@ -33,6 +33,8 @@ const ApiAxios = () => {
   return (
     <div>
       <h2>LLamada Api con Axios</h2>
+      {JSON.stringify(isPending)}
+      {JSON.stringify(error)}
 
       <ApiRes data={data} />
     </div>

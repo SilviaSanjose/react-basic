@@ -12,34 +12,39 @@ const ApiRes = ({ data }) => {
     console.log("Mis datos3", dataP);
   }, [data]);
 
-  if (Array.isArray(data)) {
-    return (
-      <div>
-        Api res
+  if (dataP) {
+    if (Array.isArray(dataP)) {
+      return (
         <div>
+          Api res
+          <div>
+            <ul>
+              {data.map((i, index) => (
+                <Fragment key={index}>
+                  <li>{i.id}</li>
+                  <li>{i.title}</li>
+                  <li>{i.body}</li>
+                </Fragment>
+              ))}
+            </ul>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          uno
           <ul>
-            {data.map((i, index) => (
-              <Fragment key={index}>
-                <li>{i.id}</li>
-                <li>{i.title}</li>
-                <li>{i.body}</li>
-              </Fragment>
-            ))}
+            Mis datos:
+            <li>Usuario: {dataP.userId}</li>
+            <li>Título: {dataP.title}</li>
+            <li>{dataP.body}</li>
           </ul>
         </div>
-      </div>
-    );
+      );
+    }
   } else {
-    return (
-      <div>
-        <ul>
-          Mis datos:
-          <li>Usuario: {data.userId}</li>
-          <li>Título: {data.title}</li>
-          <li>{data.body}</li>
-        </ul>
-      </div>
-    );
+    return null;
   }
 
   // const data = props;
