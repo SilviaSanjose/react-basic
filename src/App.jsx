@@ -16,6 +16,7 @@ import Error404 from "./pages/Error404";
 import Home from "./pages/Home";
 import Rutas from "./pages/Rutas";
 import ApiAxios from "./pages/ApiAxios";
+import MyPage from "./context/MyPage";
 
 function App() {
   const idRoute = Math.round(Math.random() * 10);
@@ -46,6 +47,9 @@ function App() {
               <Link exact to="/api">
                 Api
               </Link>
+              <Link exact to="/context">
+                Context
+              </Link>
             </nav>
           </header>
 
@@ -65,11 +69,11 @@ function App() {
             {/*ruta con useLocation() */}
 
             <Route exact path="/api" component={ApiAxios} />
+            <Route exact path="/context" component={MyPage} />
 
             <Route path="*" component={Error404} />
           </Switch>
         </Router>
-
 
         <footer className="footer">
           <a

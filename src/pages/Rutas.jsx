@@ -108,7 +108,7 @@ const Rutas = () => {
         </li>
         <li>
           <b>useRouteMatch();</b> devuelve un objeto con parámetros como path
-          (es la ruta tal como figura en Router "/rutas/:routeename/:id" y url
+          (es la ruta tal como figura en Router "/rutas/:routeename/:id") y url
           (ruta real "/rutas/1/5")
           <div>
             Las rutas anidadas no hace falta que lleven la tag BrowserRouter, ya
