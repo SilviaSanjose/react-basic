@@ -2,22 +2,22 @@
 import { useState, useEffect, Fragment } from "react";
 
 const ApiRes = ({ data }) => {
-  console.log("inicio");
-  console.log("mis dtos", data);
+  // console.log("inicio");
+  //console.log("mis dtos", data);
 
   const [dataP, setDataP] = useState("");
 
   useEffect(() => {
     setDataP(data);
-    console.log("Mis datos3", dataP);
+    //console.log("Mis datos3", dataP);
   }, [data]);
 
   if (dataP) {
     if (Array.isArray(dataP)) {
       return (
         <div>
-          Api res
-          <div>
+          Listado:
+          <div className="api-box-one">
             <ul>
               {data.map((i, index) => (
                 <Fragment key={index}>
@@ -33,18 +33,20 @@ const ApiRes = ({ data }) => {
     } else {
       return (
         <div>
-          uno
-          <ul>
-            Mis datos:
-            <li>Usuario: {dataP.userId}</li>
-            <li>Título: {dataP.title}</li>
-            <li>{dataP.body}</li>
-          </ul>
+          Listado de uno:
+          <div className="api-box-one">
+            <ul>
+              Mis datos:
+              <li>Usuario: {dataP.userId}</li>
+              <li>Título: {dataP.title}</li>
+              <li>{dataP.body}</li>
+            </ul>
+          </div>
         </div>
       );
     }
   } else {
-    return null;
+    return <div className="api-box-one">No hay datos para mostrar</div>;
   }
 
   // const data = props;

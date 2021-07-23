@@ -15,8 +15,9 @@ import Propiedades from "./pages/Propiedades";
 import Error404 from "./pages/Error404";
 import Home from "./pages/Home";
 import Rutas from "./pages/Rutas";
-import ApiAxios from "./pages/ApiAxios";
+import Api from "./pages/Api";
 import MyPage from "./context/MyPage";
+import Songs from "./pages/Songs";
 
 function App() {
   const idRoute = Math.round(Math.random() * 10);
@@ -50,31 +51,36 @@ function App() {
               <Link exact to="/context">
                 Context
               </Link>
+              <Link exact to="/canciones">
+                Canciones
+              </Link>
             </nav>
           </header>
+          <main>
+            <Switch>
+              <Route exact path="/" component={Home}></Route>
+              <Route exact path="/componentes" component={ComponentF} />
+              <Route
+                exact
+                path="/propiedades"
+                children={
+                  <Propiedades msg="Mensaje creado desde la app principal como propiedad." />
+                }
+              />
+              <Route path="/rutas/:routeename/:id" component={Rutas} />
+              {/*ruta con useParams() */}
+              <Route path="/rutas" component={Rutas} />
+              {/*ruta con useLocation() */}
 
-          <Switch>
-            <Route exact path="/" component={Home}></Route>
-            <Route exact path="/componentes" component={ComponentF} />
-            <Route
-              exact
-              path="/propiedades"
-              children={
-                <Propiedades msg="Mensaje creado desde la app principal como propiedad." />
-              }
-            />
-            <Route path="/rutas/:routeename/:id" component={Rutas} />
-            {/*ruta con useParams() */}
-            <Route path="/rutas" component={Rutas} />
-            {/*ruta con useLocation() */}
+              <Route exact path="/api" component={Api} />
 
-            <Route exact path="/api" component={ApiAxios} />
-            <Route exact path="/context" component={MyPage} />
+              <Route exact path="/context" component={MyPage} />
+              <Route exact path="/canciones" component={Songs}></Route>
 
-            <Route path="*" component={Error404} />
-          </Switch>
+              <Route path="*" component={Error404} />
+            </Switch>
+          </main>
         </Router>
-
         <footer className="footer">
           <a
             className="App-link"

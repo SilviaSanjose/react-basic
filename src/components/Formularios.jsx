@@ -33,6 +33,7 @@ const Formularios = () => {
   const handleSubmit2 = (e) => {
     e.preventDefault();
     alert(`Nombre: ${form.nom} 
+    Apellido: ${form.apell} 
     Condiciones: ${form.terminos}`);
   };
   return (
@@ -131,7 +132,14 @@ const Formularios = () => {
       <div className="d-flex">
         <div>
           <form onSubmit={handleSubmit2} className="form">
-            <input type="text" id="nombre" name="nom" onChange={handleChange} />
+            <input type="text" name="nom" onChange={handleChange} />
+            <br />
+            <input
+              type="text"
+              id="apellido"
+              name="apell"
+              onChange={handleChange}
+            />
             <br />
             <label className="mr-2">Acepto:</label>
             <input type="checkbox" name="terminos" onChange={handleChecked} />

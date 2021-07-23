@@ -19,7 +19,7 @@ function ComponentF() {
     color: "blue",
   };
   return (
-    <main>
+    <>
       <h2 className={styles.title}>Componente funcional</h2>
       <p>
         Debe tener export para llamarlo desde la App principal: puede ser desde
@@ -65,7 +65,7 @@ function ComponentF() {
         de React. Y en el componente,
       </p>
       <h2 style={myStyle}>Mi Estilo definido en el componente</h2>
-    </main>
+    </>
   );
 }
 export default ComponentF;

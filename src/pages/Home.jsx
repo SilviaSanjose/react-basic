@@ -10,7 +10,7 @@ const Home = () => {
   const ocultar = () => changeRender(false);
 
   return (
-    <main>
+    <>
       <div>
         <p>
           Para recorrer arrays, se usa el método <b>.map()</b>:{" "}
@@ -57,7 +57,7 @@ const Home = () => {
       <section>
         <Formularios />
       </section>
-    </main>
+    </>
   );
 };
 

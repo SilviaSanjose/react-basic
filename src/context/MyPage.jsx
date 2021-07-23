@@ -5,7 +5,7 @@ import Main from "./Main";
 
 const MyPage = () => {
   return (
-    <main>
+    <>
       <div>
         Los contexto nos permiten crear y usar valores globales en todos los
         componentes que indiquemos, si pasar props de unos a otros. <br />
@@ -20,7 +20,7 @@ const MyPage = () => {
           <Main />
         </LanguageProvider>
       </ThemeProvider>
-    </main>
+    </>
   );
 };
 

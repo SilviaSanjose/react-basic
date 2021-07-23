@@ -2,7 +2,7 @@ import React from "react";
 
 const Propiedades = (props) => {
   return (
-    <main>
+    <>
       <h2>Propiedades</h2>
       <ul>
         Un componente puede recibir propiedades de forma individual o todas las
@@ -66,7 +66,7 @@ const Propiedades = (props) => {
                 porDefecto: "Propiedad por defecto"
             }
             `}</pre>
-    </main>
+    </>
   );
 };
 

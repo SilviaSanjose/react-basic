@@ -1,9 +1,10 @@
 //import axios from "axios";
 //import { useState, useEffect } from "react";
 import ApiRes from "../components/ApiRes";
+import CrudApi from "../components/CrudApi";
 import { useFetch } from "../hooks/useFecth";
 
-const ApiAxios = () => {
+const Api = () => {
   //axios usa método Http y la URL es un parámetro.
   //Es una librería de promesas que han de ser manipuladas con el then, que automáticamente obtiene la respuesta.
 
@@ -13,8 +14,6 @@ const ApiAxios = () => {
   const url = `${urlBase}posts`;
 
   const { data, isPending, error } = useFetch(url);
-
-  console.log("Recibido en data", data);
 
   //const [user, getUser] = useState(""); //agregamos los datos recuperado al estado
   // useEffect(() => {
@@ -31,14 +30,31 @@ const ApiAxios = () => {
   // }, [url]);
 
   return (
-    <div>
-      <h2>LLamada Api con Axios</h2>
-      {JSON.stringify(isPending)}
-      {JSON.stringify(error)}
-
+    <>
+      <div>
+        Desde está página, vamos a llamar a dos componentes: CrudApi y ApiRes:
+      </div>
+      <div>
+        Para ApiRes, vamos a usar un hook personalizado para hacer la petición
+        fetch, el cual hace la llamada a la api, y devuelve los datos que se
+        pasan al componente, más variables si ha habido un error y si esá
+        pendiente la llamada. Esta separado por el componente formulario, la
+        tabla y la fila de cada tabla
+      </div>
+      <br />
+      <h2>Crud Api</h2>
+      <CrudApi></CrudApi>
+      <br />
+      <br />
+      <h2>LLamada Api</h2>
+      {JSON.stringify(error) ? "error true" : "error false"}
+      <br />
+      "pending"; {JSON.stringify(isPending)}
+      <br />
+      "error"; {JSON.stringify(error)}
       <ApiRes data={data} />
-    </div>
+    </>
   );
 };
 
-export default ApiAxios;
+export default Api;

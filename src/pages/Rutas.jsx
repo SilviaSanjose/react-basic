@@ -30,8 +30,8 @@ const Rutas = () => {
   let { path, url } = useRouteMatch();
 
   return (
-    <main>
-      <h3>Hooks de React Routers</h3>
+    <>
+      <h2>Hooks de React Routers</h2>
       <ul>
         <li>
           <b>useParams();</b> Devuelve un objeto clave:valor con los parámetros
@@ -173,7 +173,7 @@ const Rutas = () => {
           <Redirect to="/componentes" />
       </Route>
       `}</pre>
-    </main>
+    </>
   );
 };
 
