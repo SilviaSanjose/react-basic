@@ -1,5 +1,3 @@
-import CrudApiTableRow from "./CrudApiTableRow";
-
 const CrudApiTable = ({ data, setDataToEdit, deleteData }) => {
   console.log("datos en tabla", data);
   console.log(data.length);
@@ -16,13 +14,6 @@ const CrudApiTable = ({ data, setDataToEdit, deleteData }) => {
         <tbody>
           {data.length > 0 ? (
             data.map((el) => (
-              // <CrudApiTableRow
-              //   key={el.id}
-              //   el={el}
-              //   setDataToEdit={setDataToEdit}
-              //   deleteData={deleteData}
-              // />
-
               <tr key={el.id}>
                 <td>{el.name}</td>
                 <td>{el.constellation}</td>

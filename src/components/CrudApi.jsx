@@ -34,7 +34,6 @@ const CrudApi = () => {
 
   const createData = (data) => {
     //recibe data de CrudApiForm
-    console.log("createdata", data);
     data.id = Date.now();
     let options = {
       body: data,
@@ -43,7 +42,6 @@ const CrudApi = () => {
     helpHttp()
       .post(url, options)
       .then((res) => {
-        console.log(res);
         if (!res.err) {
           setDb([...db, res]);
           // setError(null);

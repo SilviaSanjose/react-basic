@@ -54,7 +54,7 @@ const Formularios = () => {
       </code>
       <p>Formulario recogiendo los datos individualmente.</p>
       <div className="d-flex">
-        <form onSubmit={handleSubmit}>
+        <form className="home-form" onSubmit={handleSubmit}>
           <label htmlFor={"nombre"} className="mr-2">
             Nombre:{" "}
           </label>

@@ -2,7 +2,7 @@
   background-color: #d1cbcb;
   filter: invert(1);
 }
-form {
+.home-form {
   border: 1px solid;
   padding: 20px;
   min-width: 450px;
@@ -11,4 +11,9 @@ form {
 .form {
   max-height: 160px;
   min-width: 352px;
+}
+form input,
+button {
+  border-radius: 5px;
+  border: 1px solid #b2acac;
 }
