@@ -25,7 +25,7 @@ export const helpHttp = () => {
     return fetch(endpoint, options)
       .then((res) =>
         res.ok
-          ? res.json()
+          ? console.log("llamada", res.json()) //res.json()
           : Promise.reject({
               err: true,
               status: res.status || "00",
