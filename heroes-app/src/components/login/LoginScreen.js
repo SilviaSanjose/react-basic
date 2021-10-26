@@ -7,6 +7,7 @@ const LoginScreen = ({ history }) => {
     const { dispatch } = useContext(AuthContext);
 
     const handleLogin = () => {
+        const lastPath = localStorage.getItem("lastPath") || "/"; //obtengo la ultima página buscada para al hacer login volver a esa url
         const action = {
             type: types.login,
             payload: { name: "Silvia" },
@@ -15,7 +16,8 @@ const LoginScreen = ({ history }) => {
 
         //history es una props que viene con react router
         // history.push("/"); //redirige con push a la home
-        history.replace("/"); //reemplaza con replace con la home evitando la última página visitada al reemplazarla.
+
+        history.replace(lastPath); //reemplaza con replace con la home evitando la última página visitada al reemplazarla.
         //así al volver atrás, en caso, no volvera al login
     };
 

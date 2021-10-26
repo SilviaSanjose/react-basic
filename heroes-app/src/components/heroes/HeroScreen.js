@@ -2,6 +2,9 @@ import React, { useMemo } from "react";
 import { Redirect, useParams } from "react-router";
 import { getHeroById } from "../selectors/getHeroByID";
 
+//trabajar con imágenes con webpack, desde las imagenes en src en vez de en la carpeta public
+const heroImages = require.context("../../assets/heroes", true); //true para que busque en subdirectorios
+
 const HeroScreen = ({ history }) => {
     const { heroId } = useParams(); //obtengo el parámetro de la url
 
@@ -38,7 +41,8 @@ const HeroScreen = ({ history }) => {
             <div className="row">
                 <div className="col-md-4">
                     <img
-                        src={`../assets/heroes/${id}.jpg`}
+                        /* src={`../assets/heroes/${id}.jpg`} */ //img desde public
+                        src={heroImages(`./${id}.jpg`).default} //con webpack desde src
                         className="card-img-top animate__animated animate__fadeInTopLeft"
                         alt={superhero}
                     />
