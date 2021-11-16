@@ -1,11 +1,15 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { login } from "../../actions/auth";
+import {
+    login,
+    startLoginEmailPassword,
+    startGoogleLogin,
+} from "../../actions/auth";
 import { useForm } from "../../hooks/useForm";
 
 const LoginScreen = () => {
-    //hook de redux
+    //hook de redux que hace de disparador de otra función
     const dispatch = useDispatch();
 
     const [formValues, handleInputChange] = useForm({
@@ -17,7 +21,11 @@ const LoginScreen = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        dispatch(login(12345, "Silvi"));
+        dispatch(startLoginEmailPassword(email, password));
+    };
+
+    const handleGoogleLogin = (e) => {
+        dispatch(startGoogleLogin());
     };
 
     return (
@@ -52,7 +60,7 @@ const LoginScreen = () => {
                 <div className="auth__social-networks">
                     <p>Login with social networks </p>
 
-                    <div className="google-btn">
+                    <div className="google-btn" onClick={handleGoogleLogin}>
                         <div className="google-icon-wrapper">
                             <img
                                 className="google-icon"
