@@ -3,6 +3,7 @@ npm install react-router-dom
 npm install react-redux redux
 npm install firebase (lo uso para hacer el login con email y google)
 npm i redux-thunk (middleware para hacer acciones asíncronas en la app)
+npm i validator (para validaciones y evitar regex )
 
 # Getting Started with Create React App
 
