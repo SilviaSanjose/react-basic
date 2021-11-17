@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
     login,
@@ -11,6 +11,7 @@ import { useForm } from "../../hooks/useForm";
 const LoginScreen = () => {
     //hook de redux que hace de disparador de otra función
     const dispatch = useDispatch();
+    const { loading } = useSelector((state) => state.ui); //solo necesito el loading
 
     const [formValues, handleInputChange] = useForm({
         email: "silvia@gmail.com",
@@ -52,7 +53,7 @@ const LoginScreen = () => {
                 <button
                     className="btn btn-primary btn-block"
                     type="submit"
-                    disabled={false}
+                    disabled={loading}
                 >
                     Login
                 </button>
