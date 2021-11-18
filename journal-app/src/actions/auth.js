@@ -61,3 +61,16 @@ export const login = (uid, displayName) => ({
         displayName,
     },
 });
+//Logout
+export const startLogout = () => {
+    return async (dispatch) => {
+        const auth = getAuth();
+        await auth.signOut();
+        dispatch(logout());
+    };
+};
+
+export const logout = () => ({
+    type: types.logout,
+    //no neceitamos payload ya que en el authreducer ya devuelve un objeto vacio
+});

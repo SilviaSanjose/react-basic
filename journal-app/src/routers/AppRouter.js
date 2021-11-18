@@ -44,9 +44,18 @@ const AppRouter = () => {
         <Router>
             <div>
                 <Switch>
-                    <Route path="/auth" component={AuthRouter} />
+                    <Route
+                        path="/auth"
+                        component={AuthRouter}
+                        isLoggedIn={isLoggedIn}
+                    />
 
-                    <Route exact path="/" component={JournalScreen} />
+                    <Route
+                        exact
+                        path="/"
+                        component={JournalScreen}
+                        isLoggedIn={isLoggedIn}
+                    />
 
                     <Redirect to="/auth/login" />
                 </Switch>
