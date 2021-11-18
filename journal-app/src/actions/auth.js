@@ -8,6 +8,7 @@ import { updateProfile } from "firebase/auth";
 import { types } from "../components/auth/types";
 import { googleAuthProvider } from "../firebase/firebase-config";
 import { finishLoading, startLoading } from "./ui";
+import Swal from "sweetalert2";
 
 //al hacer login se llama a esta función con un disparador, que también dispara la función de login a los 3.5 segundos
 export const startLoginEmailPassword = (email, password) => {
@@ -23,8 +24,14 @@ export const startLoginEmailPassword = (email, password) => {
                 dispatch(finishLoading());
             })
             .catch((error) => {
-                console.error("Error de acceso");
+                console.error(error.message);
                 dispatch(finishLoading());
+                Swal.fire({
+                    title: "Error!",
+                    text: "No hay usuario que coincida con ese identificador",
+                    icon: "error",
+                    confirmButtonText: "Ok",
+                });
             });
     };
 };
