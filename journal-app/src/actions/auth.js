@@ -5,7 +5,7 @@ import {
     signInWithPopup,
 } from "@firebase/auth";
 import { updateProfile } from "firebase/auth";
-import { types } from "../components/auth/types";
+import { types } from "../types/types";
 import { googleAuthProvider } from "../firebase/firebase-config";
 import { finishLoading, startLoading } from "./ui";
 import Swal from "sweetalert2";

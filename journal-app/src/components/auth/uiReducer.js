@@ -1,4 +1,4 @@
-import { types } from "./types";
+import { types } from "../../types/types";
 //reducer para controlar los errores del formulario de registro
 const initialState = {
     loading: false,
