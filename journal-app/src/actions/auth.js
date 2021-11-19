@@ -19,7 +19,6 @@ export const startLoginEmailPassword = (email, password) => {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                console.log(user);
                 dispatch(login(user.uid, user.displayName));
                 dispatch(finishLoading());
             })
@@ -43,7 +42,6 @@ export const startRegistrerWithEmailPassword = (email, password, name) => {
             .then(async (userCredential) => {
                 const user = userCredential.user;
                 await updateProfile(auth.currentUser, { displayName: name });
-                console.log(user);
                 dispatch(login(user.uid, user.displayName));
             })
             .catch((error) => {
