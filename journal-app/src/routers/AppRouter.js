@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
 import { login } from "../actions/auth";
+import { startLoadingNotes } from "../actions/note";
 import JournalScreen from "../components/journal/JournalScreen";
 import AuthRouter from "./AuthRouter";
 import PrivateRoutes from "./PrivateRoutes";
@@ -17,12 +18,13 @@ const AppRouter = () => {
     useEffect(() => {
         const auth = getAuth();
         //comprueba si hay cambios en el usuario
-        onAuthStateChanged(auth, (user) => {
+        onAuthStateChanged(auth, async (user) => {
             if (user?.uid) {
                 //si user tiene algo y existe uid, guarda nuevamente los datos. Asi puedo hacer una comprobación de si el usuario esta logueado o no y mantener los datos al
                 //recargar la página
                 dispatch(login(user.uid, user.displayName));
                 setisLoggedIn(true); //esta logueado
+                dispatch(startLoadingNotes(user.uid)); //llamar a función carga las notas del usuario
             } else {
                 setisLoggedIn(false); //no esta logueado
             }
